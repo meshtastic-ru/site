@@ -1,7 +1,7 @@
 baseURL = 'https://meshtastic.ru/'
 languageCode = 'ru'
 title = 'Meshtastic Россия'
-theme = 'relearn'
+theme = 'hugo-theme-relearn'
 
 [languages.ru]
 
@@ -46,3 +46,7 @@ theme = 'relearn'
   name = 'Тема: темная'
 
 # Меню настраивается через front matter в файлах контента
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
