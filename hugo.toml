@@ -1,4 +1,4 @@
-baseURL = 'https://meshtastic.ru/'
+baseURL = 'https://meshtastic-ru.github.io'
 languageCode = 'ru'
 title = 'Meshtastic Россия'
 theme = 'hugo-theme-relearn'
