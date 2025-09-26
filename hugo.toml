@@ -1,0 +1,48 @@
+baseURL = 'https://meshtastic.ru/'
+languageCode = 'ru'
+title = 'Meshtastic Россия'
+theme = 'relearn'
+
+[languages.ru]
+
+[params]
+  # Настройки фавиконов
+  favicon = '/favicon.ico'
+  faviconSVG = '/favicon.svg'
+  appleTouchIcon = '/apple-touch-icon.png'
+  
+  # Настройки переключателя тем
+  themeVariantAutoSwitch = true  # показывать переключатель тем
+  
+  # Настройка кнопки "Главная"
+  landingPageName = '<i class="fa-fw fas fa-home"></i> Главная'
+
+  # Настройки поиска
+  search = true
+  searchMaxResultLength = 20
+  
+  # Настройки навигации
+  showBreadcrumb = true
+  showPageNav = true
+  showTop = true
+  
+  # Настройки контента
+  showTaxonomies = true
+  showTaxonomyCount = true
+
+  # Настройки сортировки меню
+  # ordersectionsby = 'weight'
+
+# Определение доступных вариантов тем
+[[params.themeVariant]]
+  identifier = 'auto'
+  name = 'Тема: автоматически'
+  auto = ['light', 'dark']
+[[params.themeVariant]]
+  identifier = 'light'
+  name = 'Тема: светлая'
+[[params.themeVariant]]
+  identifier = 'dark'
+  name = 'Тема: темная'
+
+# Меню настраивается через front matter в файлах контента

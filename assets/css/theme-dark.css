@@ -1,0 +1,76 @@
+:root {
+  /* dark theme with Meshtastic green */
+  --PRIMARY-color: rgba(103, 234, 148, 1); /* Meshtastic green instead of relearn green */
+  --SECONDARY-color: rgba(108, 140, 227, 1); /* brand secondary color */
+  --ACCENT-color: rgb(255, 102, 78, 1); /* brand accent color, used for search highlights */
+
+  --MAIN-TEXT-color: rgba(200, 200, 200, 1); /* text color of content and titles */
+  --MAIN-LINK-HOVER-color: rgba(147, 176, 255, 1); /* hovered link color of content */
+  --MAIN-BG-color: rgba(32, 32, 32, 1); /* background color of content */
+  --MAIN-TITLES-TEXT-color: rgba(230, 230, 230, 1); /* text color of titles */
+
+  --CODE-theme: relearn-dark; /* name of the chroma stylesheet file */
+  --CODE-BLOCK-color: rgba(248, 248, 242, 1); /* fallback text color of block code; should be adjusted to your selected chroma style */
+  --CODE-BLOCK-BG-color: rgba(43, 43, 43, 1); /* fallback background color of block code; should be adjusted to your selected chroma style */
+  --CODE-BLOCK-BORDER-color: rgba(71, 71, 71, 1); /* border color of block code */
+  --CODE-INLINE-color: rgba(130, 229, 80, 1); /* text color of inline code */
+  --CODE-INLINE-BG-color: rgba(45, 45, 45, 1); /* background color of inline code */
+  --CODE-INLINE-BORDER-color: rgba(70, 70, 70, 1); /* border color of inline code */
+
+  --BROWSER-theme: dark; /* name of the theme for browser scrollbars of the main section */
+  --MERMAID-theme: dark; /* name of the default Mermaid theme for this variant, can be overridden in hugo.toml */
+  --OPENAPI-theme: dark; /* name of the default OpenAPI theme for this variant, can be overridden in hugo.toml */
+  --OPENAPI-CODE-theme: obsidian; /* name of the default OpenAPI code theme for this variant, can be overridden in hugo.toml */
+
+  --MENU-HEADER-color: rgba(40, 40, 40, 1); /* color of menu header */
+
+  --MENU-SEARCH-color: rgba(103, 234, 148, 1); /* text and icon color of search box - Meshtastic green */
+  --MENU-SEARCH-BG-color: rgba(40, 40, 40, 1); /* background color of search box - darker for contrast */
+  --MENU-SEARCH-BORDER-color: rgba(103, 234, 148, 0.6); /* border color of search box - Meshtastic green with transparency */
+
+  --MENU-HOME-LINK-color: rgba(64, 64, 64, 1); /* home button color if configured */
+  --MENU-HOME-LINK-HOVER-color: rgba(0, 0, 0, 1); /* hovered home button color if configured */
+
+  --MENU-SECTIONS-BG-color: rgba(43, 43, 43, 1); /* background of the menu; this is NOT just a color value but can be a complete CSS background definition including gradients, etc. */
+  --MENU-SECTIONS-LINK-color: rgba(170, 170, 170, 1); /* link color of menu topics - softer */
+  --MENU-SECTIONS-LINK-HOVER-color: rgba(230, 230, 230, 1); /* hovered link color of menu topics - softer white */
+  --MENU-SECTIONS-ACTIVE-BG-color: rgba(50, 50, 50, 1); /* background color of the active menu section */
+  --MENU-SECTION-ACTIVE-CATEGORY-color: rgba(130, 229, 80, 1); /* text color of the displayed menu topic */
+  --MENU-SECTION-SEPARATOR-color: rgba(96, 96, 96, 1); /* separator color between menu sections and menu footer */
+
+  --MENU-VISITED-color: rgba(72, 106, 201, 1); /* icon color of visited menu topics if configured */
+
+  --BOX-CAPTION-color: rgba(220, 220, 220, 1); /* text color of colored box titles - softer */
+  --BOX-BG-color: rgba(25, 25, 25, 1); /* background color of colored boxes - slightly lighter */
+  --BOX-TEXT-color: rgba(200, 200, 200, 1); /* text color of colored box content - softer */
+}
+
+/* Дополнительные стили для поля поиска */
+.searchbox {
+  transition: all 0.3s ease;
+}
+
+.searchbox:focus-within {
+  box-shadow: 0 0 0 2px rgba(103, 234, 148, 0.3);
+  border-color: rgba(103, 234, 148, 1);
+}
+
+.searchbox input:focus {
+  outline: none;
+  border-color: rgba(103, 234, 148, 1);
+}
+
+.searchbox button:hover {
+  color: rgba(103, 234, 148, 1);
+}
+
+/* Улучшенный перенос заголовков по словам без дефисов */
+h1, h2, h3, h4, h5, h6,
+.R-h1, .R-h2, .R-h3, .R-h4, .R-h5, .R-h6,
+.R-title, .R-content h1, .R-content h2, .R-content h3, .R-content h4, .R-content h5, .R-content h6 {
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: none;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}

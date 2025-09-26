@@ -1,0 +1,50 @@
+{{- $LastModifierDisplayName := "" }}
+{{- $LastModifierEmail := "" }}
+{{- $Date := "" }}
+{{- $dateFormat := site.Params.dateFormat | default ":date_medium" }}
+{{- with .GitInfo }}
+  {{- with and (not site.Params.hideAuthorName) .AuthorName }}
+    {{- $LastModifierDisplayName = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorEmail) .AuthorEmail }}
+    {{- $LastModifierEmail = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorDate) .AuthorDate }}
+    {{- $Date = . | time.Format $dateFormat }}
+  {{- end }}
+{{- else }}
+  {{- with and (not site.Params.hideAuthorName) .Params.LastModifierDisplayName }}
+    {{- $LastModifierDisplayName = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorEmail) .Params.LastModifierEmail }}
+    {{- $LastModifierEmail = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorDate) .Date }}
+    {{- $Date = . | time.Format $dateFormat }}
+  {{- end }}
+{{- end }}
+{{- if $LastModifierDisplayName }}
+              <i class='fa-fw fas fa-user'></i> {{ with $LastModifierEmail }}<a href="mailto:{{ . }}">{{ end }}{{ $LastModifierDisplayName }}{{ with $LastModifierEmail }}</a>{{ end }}
+{{- end }}
+{{- with $Date }}
+              <i class='fa-fw fas fa-calendar'></i> {{ . }}
+{{- end }}
+{{- partial "term-list.html" (dict
+  "page" .
+  "taxonomy" "categories"
+  "icon" "layer-group"
+) }}
+
+<!-- Атрибуция торговой марки Meshtastic -->
+<hr style="margin: 1rem 0 0.5rem 0; border-color: var(--MAIN-BORDER-color);">
+<div style="text-align: center; font-size: 0.85em; color: var(--MAIN-TEXT-color); margin: 0.25rem 0 0 0; padding: 0.25rem; background-color: var(--MAIN-BG-color); border: 1px solid var(--MAIN-BORDER-color); border-radius: 4px;">
+  <p style="margin: 0.25rem 0;">Этот сайт не аффилирован с проектом Meshtastic и не одобрен им.</p>
+  
+  <p style="margin: 0.25rem 0;">
+    <strong>Meshtastic®</strong> и логотип Meshtastic являются зарегистрированной торговой маркой <strong>Meshtastic LLC</strong>.<br>
+  </p>
+  
+  <p style="margin: 0.25rem 0;">
+    Официальный сайт: <a href="https://meshtastic.org/" target="_blank" rel="noopener" style="color: var(--MAIN-LINK-color); text-decoration: underline;">meshtastic.org</a>
+  </p>
+</div>

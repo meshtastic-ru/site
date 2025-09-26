@@ -9,6 +9,7 @@ _site/
 
 # Построенный сайт
 /public
+/resources
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor
@@ -19,3 +20,6 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# MacOs
+.DS_Store
